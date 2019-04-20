@@ -1,0 +1,25 @@
+{
+  "name": "blizzy-core",
+  "version": "1.17.0",
+  "description": "Core reusable objects for a set of Blizzy services.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trisco2001/blizzy-core.git"
+  },
+  "author": "Tristan Leonard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trisco2001/blizzy-core/issues"
+  },
+  "homepage": "https://github.com/trisco2001/blizzy-core#readme",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.24",
+    "@types/node": "^11.13.5",
+    "axios": "^0.18.0"
+  }
+}

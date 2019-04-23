@@ -2,7 +2,6 @@ import axios, { AxiosPromise } from 'axios'
 
 interface RequesterEnvironment {
     locale: string
-    apikey: string
     baseUrl: string
 }
 
@@ -11,7 +10,6 @@ export class RequesterService {
 
     request(resource: string, params: any): AxiosPromise {
         params.locale = this.environment.locale;
-        params.apikey = this.environment.apikey;
 
         const options = {
             baseURL: this.environment.baseUrl,

@@ -2,22 +2,15 @@ import { BasicResponse } from "../types/basicResponse";
 import { RequesterService } from "./requesterService"
 
 interface BlizzyServiceProtocol {
-    execute(token: string, resource: string, params: any): Promise<BasicResponse>
-}
-
-interface BlizzyEnvironment {
-    locale: string
-    apikey: string
-    baseUrl: string
+    execute(resource: string, params: any): Promise<BasicResponse>
 }
 
 export class BlizzyService implements BlizzyServiceProtocol {
-    constructor(private environment: BlizzyEnvironment) { }
+    constructor(private requesterService: RequesterService) { }
 
-    async execute(token: string, resource: string, params: any): Promise<BasicResponse> {
+    async execute(resource: string, params: any): Promise<BasicResponse> {
         try {
-            const requester = new RequesterService(this.environment, token);
-            const result = await requester.request(resource, params)
+            const result = await this.requesterService.request(resource, params)
             const response: BasicResponse = {
                 statusCode: result.status,
                 body: JSON.stringify(result.data),

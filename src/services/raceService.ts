@@ -1,16 +1,16 @@
 import { BasicResponse } from "../types/basicResponse";
 import { BlizzyService } from "./blizzyService";
 
-export interface CharacterServiceProtocol {
-    getCharacterInfo(characterName: string, serverName: string): Promise<BasicResponse>
+export interface RaceServiceProtocol {
+    getRaces(): Promise<BasicResponse>
 }
 
-export class CharacterService implements CharacterServiceProtocol {
+export class RaceService implements RaceServiceProtocol {
     constructor(private blizzyService: BlizzyService) { }
 
-    async getCharacterInfo(characterName: string, serverName: string): Promise<BasicResponse> {
+    async getRaces(): Promise<BasicResponse> {
         try {
-            const result = await this.blizzyService.execute(`wow/character/${serverName}/${characterName}`, {})
+            const result = await this.blizzyService.execute(`wow/data/character/races`, {})
             console.log(result.body)
             return result
         } catch (error) {

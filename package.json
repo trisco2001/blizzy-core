@@ -1,6 +1,6 @@
 {
   "name": "blizzy-core",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Core reusable objects for a set of Blizzy services.",
   "main": "dist/index.js",
   "scripts": {

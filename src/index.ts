@@ -1,6 +1,7 @@
 export { BasicResponse, BasicResponses } from './types/basicResponse'
 export { GatewayEventInteractor } from './interactors/gatewayEventInteractor'
 export { CharacterService } from './services/characterService'
+export { ClassService } from './services/classService'
 export { RaceService } from './services/raceService'
 export { AuthTokenService } from './services/authTokenService'
 export { BlizzyService } from './services/blizzyService'

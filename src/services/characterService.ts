@@ -10,7 +10,7 @@ export class CharacterService implements CharacterServiceProtocol {
 
     async getCharacterInfo(characterName: string, serverName: string): Promise<BasicResponse> {
         try {
-            const result = await this.blizzyService.execute(`wow/character/${serverName}/${characterName}`, {})
+            const result = await this.blizzyService.execute(`wow/character/${serverName}/${characterName}`, {"fields": "items"})
             console.log(result.body)
             return result
         } catch (error) {
